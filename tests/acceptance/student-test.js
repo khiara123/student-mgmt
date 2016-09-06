@@ -44,3 +44,9 @@ test('test visit Add new url', function(assert) {
     assert.equal(currentURL(), '/student/new');
   });
 });
+test('click on save button', function(assert) {
+   visit('/student/new');
+  andThen(function() {  
+     assert.equal(find('.gridtable tr').length,find('.gridtable tr').length , 'should see 5 listings')
+  });
+});
