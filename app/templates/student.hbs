@@ -1,0 +1,24 @@
+<table class="gridtable">
+  <tr>
+    <th>Roll Number</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+  {{#each model as |student index|}}
+    <tr>
+      <td>{{student.rollnumber}}</td>
+      <td>{{student.firstname}}</td>
+      <td>{{student.lastname}}</td>
+      <td>
+        <a href=""{{action 'onEdit' student.id}}>Edit</a>
+      </td>
+      <td>
+        <a href="" {{action 'onDelete' student.id}}>Delete</a>
+      </td>
+    </tr>
+  {{/each}}
+</table>
+<a class="linkto" href="" {{action 'onAddNew'}}>Add New Student</a>
+{{outlet}}
